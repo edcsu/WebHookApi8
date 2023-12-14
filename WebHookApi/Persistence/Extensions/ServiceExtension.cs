@@ -11,7 +11,7 @@ namespace WebHookApi.Persistence.Extensions
 
             serviceCollection.AddPooledDbContextFactory<ApiDbContext>(
                 (s, o) => o
-                    .UseNpgsql(configuration.GetConnectionString("ApiDbContext"), option => {
+                    .UseNpgsql(configuration.GetConnectionString("DefaultConnection"), option => {
                         option.EnableRetryOnFailure();
 
                         if (string.Equals(environment, "development", StringComparison.OrdinalIgnoreCase))
@@ -23,6 +23,13 @@ namespace WebHookApi.Persistence.Extensions
                     }).UseLoggerFactory(s.GetRequiredService<ILoggerFactory>()));
 
             return serviceCollection;
+        }
+
+        public static void Initialize(IApplicationBuilder app)
+        {
+            using var serviceScope = app.ApplicationServices.CreateScope();
+            var context = serviceScope.ServiceProvider.GetRequiredService<ApiDbContext>();
+            context.Database.Migrate();
         }
     }
 }

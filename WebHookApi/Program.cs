@@ -35,6 +35,9 @@ namespace WebHookApi
 
             app.UseAuthorization();
 
+            app.UseFileServer();
+
+            ServiceExtension.Initialize(app);
 
             app.MapControllers();
 
