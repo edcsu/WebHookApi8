@@ -1,4 +1,5 @@
 ﻿using WebHookApi.Domain.Hooks;
+using static WebHookApi.Domain.Hooks.WebHookEvents;
 
 namespace WebHookApi.Domain.Core.Models
 {

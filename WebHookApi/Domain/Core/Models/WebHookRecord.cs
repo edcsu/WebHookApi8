@@ -1,4 +1,6 @@
-﻿namespace WebHookApi.Domain.Core.Models
+﻿using static WebHookApi.Domain.Hooks.WebHookEvents;
+
+namespace WebHookApi.Domain.Core.Models
 {
     public class WebHookRecord
     {
