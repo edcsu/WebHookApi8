@@ -7,9 +7,9 @@ namespace WebHookApi.Domain.Core.Models
     {
         public WebHook()
         {
-            this.Headers = new HashSet<WebHookHeader>();
-            this.HookEvents = new HookEventType[0];
-            this.Records = new List<WebHookRecord>();
+            Headers = [];
+            HookEvents = [];
+            Records = new List<WebHookRecord>();
         }
 
         /// <summary>
@@ -27,9 +27,7 @@ namespace WebHookApi.Domain.Core.Models
         /// <summary>
         /// Webhook secret
         /// </summary>
-#nullable enable
         public string? Secret { get; set; }
-#nullable disable
 
         /// <summary>
         /// Content Type
@@ -60,6 +58,6 @@ namespace WebHookApi.Domain.Core.Models
         /// Timestamp of last hook trigger
         /// </summary>
         /// <value></value>
-        public DateTime? LastTrigger { get; set; }
+        public DateTimeOffset? LastTrigger { get; set; }
     }
 }

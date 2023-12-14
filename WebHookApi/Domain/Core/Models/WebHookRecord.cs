@@ -17,7 +17,7 @@ namespace WebHookApi.Domain.Core.Models
         /// <summary>
         /// Linked Webhook
         /// </summary>
-        public WebHook WebHook { get; set; }
+        public WebHook WebHook { get; set; } = default!;
 
         /// <summary>
         /// WebHookType
@@ -37,27 +37,27 @@ namespace WebHookApi.Domain.Core.Models
         /// <summary>
         /// Response json
         /// </summary>
-        public string ResponseBody { get; set; }
+        public string ResponseBody { get; set; } = default!;
 
         /// <summary>
         /// Request json
         /// </summary>
-        public string RequestBody { get; set; }
+        public string RequestBody { get; set; } = default!;
 
         /// <summary>
         /// Request Headers json
         /// </summary>
-        public string RequestHeaders { get; set; }
+        public string RequestHeaders { get; set; } = default!;
 
         /// <summary>
         /// Exception
         /// </summary>
-        public string Exception { get; set; }
+        public string Exception { get; set; } = default!;
 
         /// <summary>
         /// Hook Call Timestamp
         /// </summary>
-        public DateTime Timestamp { get; set; }
+        public DateTimeOffset Timestamp { get; set; }
     }
 
 

@@ -6,7 +6,7 @@
 
         public Guid? ActorID { get; set; }
 
-        public DateTime TimeStamp { get; set; }
+        public DateTimeOffset TimeStamp { get; set; }
 
         public EventType EventType { get; set; }
     }
