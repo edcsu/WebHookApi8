@@ -2,9 +2,9 @@
 {
     public class DomainEvent
     {
-        public Guid ID { get; set; }
+        public Guid Id { get; set; }
 
-        public Guid? ActorID { get; set; }
+        public Guid? ActorId { get; set; }
 
         public DateTimeOffset TimeStamp { get; set; }
 

@@ -1,7 +1,7 @@
-﻿using WebHookApi.Domain.Hooks;
-using static WebHookApi.Domain.Hooks.WebHookEvents;
+﻿using WebHookApi.Domain.WebHooks;
+using static WebHookApi.Domain.WebHooks.WebHookEvents;
 
-namespace WebHookApi.Domain.Core.Models
+namespace WebHookApi.Domain.Models
 {
     public class WebHook
     {
@@ -15,14 +15,14 @@ namespace WebHookApi.Domain.Core.Models
         /// <summary>
         /// Hook DB Id
         /// </summary>
-        public Guid ID { get; set; }
+        public Guid Id { get; set; }
 
         /// <summary>
 
         /// <summary>
         /// Webhook endpoint
         /// </summary>
-        public string WebHookUrl { get; set; }
+        public string WebHookUrl { get; set; } = default!;
 
         /// <summary>
         /// Webhook secret
@@ -32,7 +32,7 @@ namespace WebHookApi.Domain.Core.Models
         /// <summary>
         /// Content Type
         /// </summary>
-        public string ContentType { get; set; }
+        public string ContentType { get; set; } = default!;
 
         /// <summary>
         /// Is active / NotActiv

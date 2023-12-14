@@ -1,18 +1,18 @@
-﻿using static WebHookApi.Domain.Hooks.WebHookEvents;
+﻿using static WebHookApi.Domain.WebHooks.WebHookEvents;
 
-namespace WebHookApi.Domain.Core.Models
+namespace WebHookApi.Domain.Models
 {
     public class WebHookRecord
     {
         /// <summary>
         /// Hook record DB Id
         /// </summary>
-        public Guid ID { get; set; }
+        public Guid Id { get; set; }
 
         /// <summary>
         /// Linked Webhook Id
         /// </summary>
-        public Guid WebHookID { get; set; }
+        public Guid WebHookId { get; set; }
 
         /// <summary>
         /// Linked Webhook
