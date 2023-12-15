@@ -1,5 +1,7 @@
 
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using WebHookApi.Persistence;
 using WebHookApi.Persistence.Extensions;
 
 namespace WebHookApi
@@ -22,7 +24,10 @@ namespace WebHookApi
                 builder.Services.AddEndpointsApiExplorer();
                 builder.Services.AddSwaggerGen();
 
-                builder.Services.AddApiDbContext(configuration, environment);
+                builder.Services.AddDbContext<ApiDbContext>(options =>
+                    options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
+
+                //builder.Services.AddApiDbContext(configuration, environment);
 
                 var app = builder.Build();
 
