@@ -1,40 +1,38 @@
-﻿using WebHookApi.Domain.Hooks;
-using static WebHookApi.Domain.Hooks.WebHookEvents;
+﻿using WebHookApi.Domain.WebHooks;
+using static WebHookApi.Domain.WebHooks.WebHookEvents;
 
-namespace WebHookApi.Domain.Core.Models
+namespace WebHookApi.Domain.Models
 {
     public class WebHook
     {
         public WebHook()
         {
-            this.Headers = new HashSet<WebHookHeader>();
-            this.HookEvents = new HookEventType[0];
-            this.Records = new List<WebHookRecord>();
+            Headers = [];
+            HookEvents = [];
+            Records = new List<WebHookRecord>();
         }
 
         /// <summary>
         /// Hook DB Id
         /// </summary>
-        public Guid ID { get; set; }
+        public Guid Id { get; set; }
 
         /// <summary>
 
         /// <summary>
         /// Webhook endpoint
         /// </summary>
-        public string WebHookUrl { get; set; }
+        public string WebHookUrl { get; set; } = default!;
 
         /// <summary>
         /// Webhook secret
         /// </summary>
-#nullable enable
         public string? Secret { get; set; }
-#nullable disable
 
         /// <summary>
         /// Content Type
         /// </summary>
-        public string ContentType { get; set; }
+        public string ContentType { get; set; } = default!;
 
         /// <summary>
         /// Is active / NotActiv
@@ -60,6 +58,6 @@ namespace WebHookApi.Domain.Core.Models
         /// Timestamp of last hook trigger
         /// </summary>
         /// <value></value>
-        public DateTime? LastTrigger { get; set; }
+        public DateTimeOffset? LastTrigger { get; set; }
     }
 }

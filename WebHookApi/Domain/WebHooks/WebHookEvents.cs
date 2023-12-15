@@ -1,4 +1,4 @@
-﻿namespace WebHookApi.Domain.Hooks
+﻿namespace WebHookApi.Domain.WebHooks
 {
     public class WebHookEvents
     {

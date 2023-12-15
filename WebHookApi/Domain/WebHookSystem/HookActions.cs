@@ -19,4 +19,16 @@
         project_archived,
         //etc...
     }
+
+    public enum HookGroup1Action
+    {
+        undefined,
+        something_happened,
+    }
+
+    public enum HookGroup2Action
+    {
+        undefined,
+        something_else_happened
+    }
 }
